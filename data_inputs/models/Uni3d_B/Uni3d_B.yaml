@@ -1,0 +1,9 @@
+trans_dim: 768
+depth: 12
+drop_path_rate: 0.2
+num_heads: 12
+group_size: 64
+num_group: 512
+encoder_dims: 512
+embed_dim: 1024
+patch_dropout: 0.5
