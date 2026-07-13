@@ -1,0 +1,169 @@
+<div align="center">
+<h1>PSFT</h1>
+
+<a href="./PSFT_main.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Paper-PDF-b31b1b" alt="Paper"></a>
+<a href="./PSFT_supp.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Supplement-PDF-orange" alt="Supplement"></a>
+<a href="https://huggingface.co/SZUChangMa/PSFT" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Checkpoints-Hugging%20Face-blue" alt="Hugging Face"></a>
+<a href="https://huggingface.co/SZUChangMa/PSFT" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
+
+<p>
+  <span class="author">Da Li</span><sup>1,2&dagger;</sup>,
+  <span class="author">Chang Ma</span><sup>2&dagger;</sup>,
+  and <span class="author">Dongfu Yin</span><sup>1*</sup>
+</p>
+
+<p>
+  <sup>1</sup>Guangdong Laboratory of Artificial Intelligence and Digital Economy (Shenzhen), Shenzhen, China<br>
+  <sup>2</sup>Shenzhen University, Shenzhen, China
+</p>
+
+<p>
+  <sup>&dagger;</sup>Equal contribution. <sup>*</sup>Corresponding author.<br>
+  li944104439@gmail.com; 2510235035@mails.szu.edu.cn; yindongfu@gml.ac.cn
+</p>
+
+<p>
+  Official implementation and checkpoints for PSFT on point-cloud corruption benchmarks.
+</p>
+</div>
+
+## Pretrained Models
+
+The released checkpoints are hosted on [Hugging Face](https://huggingface.co/SZUChangMa/PSFT). Each checkpoint contains the classifier model and point-selection model used by `test_ps.py`.
+
+ModelNet-C and ModelNet40-C share the same checkpoints. Use the `ModelNet-C` checkpoint files for both `ModelNet-C` and `ModelNet40-C` evaluation.
+
+| Dataset | Backbone | Method | Augmentation | Download |
+| :--- | :--- | :--- | :--- | :--- |
+| `ModelNet-C` / `ModelNet40-C` | `Point-BERT` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-Point-BERT-PG-ModelNet-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `Point-BERT` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-Point-BERT-PG-ModelNet-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `Point-MAE` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-Point-MAE-PG-ModelNet-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `Point-MAE` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-Point-MAE-PG-ModelNet-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `ULIP-2` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-ULIP-2-PG-ModelNet-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `ULIP-2` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-ULIP-2-PG-ModelNet-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `Uni3d-B` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-Uni3d-B-PG-ModelNet-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ModelNet-C` / `ModelNet40-C` | `Uni3d-B` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ModelNet-C/Train-PS-Uni3d-B-PG-ModelNet-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `Point-BERT` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-Point-BERT-PG-ScanObjectNN-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `Point-BERT` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-Point-BERT-PG-ScanObjectNN-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `Point-MAE` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-Point-MAE-PG-ScanObjectNN-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `Point-MAE` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-Point-MAE-PG-ScanObjectNN-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `ULIP-2` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-ULIP-2-PG-ScanObjectNN-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `ULIP-2` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-ULIP-2-PG-ScanObjectNN-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `Uni3d-B` | PSFT | None | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-Uni3d-B-PG-ScanObjectNN-C-add_FFM-Augmentation%253ANone-train_alpha%253A0.5_epoch_300.pt) |
+| `ScanObjectNN-C` | `Uni3d-B` | PSFT + Aug. | WOLFMix | [Link](https://huggingface.co/SZUChangMa/PSFT/blob/main/ScanObjectNN-C/Train-PS-Uni3d-B-PG-ScanObjectNN-C-add_FFM-Augmentation%253AWOLFMix-train_alpha%253A0.5_epoch_300.pt) |
+
+You can download all released checkpoints with:
+
+```bash
+pip install huggingface_hub
+huggingface-cli download SZUChangMa/PSFT \
+  --local-dir ckpts/PSFT \
+  --include "ModelNet-C/*.pt" "ScanObjectNN-C/*.pt"
+```
+
+## Datasets
+
+Place the clean training data and corrupted test data under the default paths, or pass custom paths after the dataset name.
+
+| Dataset | Classes | Default training data | Default corrupted test data | Checkpoint |
+| :--- | :--- | :--- | :--- | :--- |
+| `ModelNet-C` | 40 | `./data_inputs/data/modelnet40_ply_hdf5_2048` | `./data_inputs/data/modelnet_c` | `ModelNet-C` ckpt |
+| `ModelNet40-C` | 40 | `./data_inputs/data/modelnet40_ply_hdf5_2048` | `./data_inputs/data/modelnet40_c` | reuse `ModelNet-C` ckpt |
+| `ScanObjectNN-C` | 15 | `./data_inputs/data/ScanObjectNN/h5_files/main_split` | `./data_inputs/data/scanobjectnn_c` | `ScanObjectNN-C` ckpt |
+
+## Quick Start
+
+First, clone this repository and install the dependencies:
+
+```bash
+git clone <this-repo-url>
+cd PSFT-master
+
+pip install torch torchvision torchaudio
+pip install numpy h5py scikit-learn timm pyyaml huggingface_hub
+pip install -e pointnet2_ops_lib
+pip install utils/KNN_CUDA-0.2-py3-none-any.whl
+```
+
+Prepare the original backbone checkpoints required by `utils/model.py`:
+
+```text
+data_inputs/pretrained/
+  Point-BERT.pth
+  Point-MAE.pth
+  pretrained_models_ckpt_zero-shot_classification_pointbert_ULIP-2.pt
+  Pretrianed_Uni3d_B_Ensembled.pt
+```
+
+Then evaluate a PSFT checkpoint:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python test_ps.py \
+  --model_path ckpts/PSFT/ModelNet-C/Train-PS-Point-BERT-PG-ModelNet-C-add_FFM-Augmentation%3ANone-train_alpha%3A0.5_epoch_300.pt \
+  --model_name Point-BERT \
+  --train_mode PG \
+  --add_FFM \
+  ModelNet-C
+```
+
+Replace `--model_path` with the actual downloaded checkpoint path, replace `--model_name` with the matching backbone in the checkpoint name, and replace the final dataset argument with one of:
+
+```text
+ModelNet-C
+ModelNet40-C
+ScanObjectNN-C
+```
+
+For `ModelNet40-C`, keep using a checkpoint from the `ModelNet-C` folder and only change the final dataset argument:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python test_ps.py \
+  --model_path ckpts/PSFT/ModelNet-C/Train-PS-Point-BERT-PG-ModelNet-C-add_FFM-Augmentation%3ANone-train_alpha%3A0.5_epoch_300.pt \
+  --model_name Point-BERT \
+  --train_mode PG \
+  --add_FFM \
+  ModelNet40-C
+```
+
+If your data is stored elsewhere, pass dataset-specific paths after the dataset name:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python test_ps.py \
+  --model_path ckpts/PSFT/ScanObjectNN-C/Train-PS-Uni3d-B-PG-ScanObjectNN-C-add_FFM-Augmentation%3AWOLFMix-train_alpha%3A0.5_epoch_300.pt \
+  --model_name Uni3d-B \
+  --train_mode PG \
+  --add_FFM \
+  ScanObjectNN-C \
+  --test_dir /path/to/scanobjectnn_c
+```
+
+## Training
+
+PSFT training uses distributed training through `torchrun`. For example:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 train_ps.py \
+  --model_name Point-BERT \
+  --train_mode PG \
+  --add_FFM \
+  ModelNet-C
+```
+
+Add WOLFMix augmentation with:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 train_ps.py \
+  --model_name Point-BERT \
+  --train_mode PG \
+  --add_FFM \
+  --add_WOLFMix \
+  ModelNet-C
+```
+
+## License
+
+The released checkpoints are distributed under the MIT license on [Hugging Face](https://huggingface.co/SZUChangMa/PSFT). Please also check the license terms of the original datasets and backbone checkpoints before use.
+
+## Citation
+
+If you find this work useful, please cite the paper. The BibTeX entry will be updated after the paper metadata is public.
