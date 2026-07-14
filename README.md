@@ -1,6 +1,5 @@
 <div align="center">
-<h1>Point-Selection Fine-Tuning Framework for
-Robust Point Cloud Classification (PRCV 2026) </h1>
+<h1>PSFT</h1>
 
 <a href="./PSFT_main.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Paper-PDF-b31b1b" alt="Paper"></a>
 <a href="./PSFT_supp.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Supplement-PDF-orange" alt="Supplement"></a>
@@ -64,13 +63,13 @@ huggingface-cli download SZUChangMa/PSFT \
 
 ## Datasets
 
-Place the clean training data and corrupted test data under the default paths, or pass custom paths after the dataset name.
+Download the clean training data and corrupted test data from Hugging Face.
 
-| Dataset | Classes | Default training data | Default corrupted test data | Checkpoint |
+| Dataset | Classes | Training data | Corrupted test data | Checkpoint |
 | :--- | :--- | :--- | :--- | :--- |
-| `ModelNet-C` | 40 | `./data_inputs/data/modelnet40_ply_hdf5_2048` | `./data_inputs/data/modelnet_c` | `ModelNet-C` ckpt |
-| `ModelNet40-C` | 40 | `./data_inputs/data/modelnet40_ply_hdf5_2048` | `./data_inputs/data/modelnet40_c` | reuse `ModelNet-C` ckpt |
-| `ScanObjectNN-C` | 15 | `./data_inputs/data/ScanObjectNN/h5_files/main_split` | `./data_inputs/data/scanobjectnn_c` | `ScanObjectNN-C` ckpt |
+| `ModelNet-C` | 40 | [Download](https://huggingface.co/datasets/SZUChangMa/PointCloudCorruption/tree/main/modelnet40_ply_hdf5_2048) | [Download](https://huggingface.co/datasets/SZUChangMa/PointCloudCorruption/tree/main/modelnet_c) | `ModelNet-C` ckpt |
+| `ModelNet40-C` | 40 | [Download](https://huggingface.co/datasets/SZUChangMa/PointCloudCorruption/tree/main/modelnet40_ply_hdf5_2048) | [Download](https://huggingface.co/datasets/SZUChangMa/PointCloudCorruption/tree/main/modelnet40_c) | reuse `ModelNet-C` ckpt |
+| `ScanObjectNN-C` | 15 | [Download](https://huggingface.co/datasets/SZUChangMa/PointCloudCorruption/tree/main/ScanObjectNN/h5_files/main_split) | [Download](https://huggingface.co/datasets/SZUChangMa/PointCloudCorruption/tree/main/scanobjectnn_c) | `ScanObjectNN-C` ckpt |
 
 ## Quick Start
 
@@ -82,19 +81,18 @@ cd PSFT-master
 
 pip install torch torchvision torchaudio
 pip install numpy h5py scikit-learn timm pyyaml huggingface_hub
-pip install -e pointnet2_ops_lib
+pip install "git+git://github.com/erikwijmans/Pointnet2_PyTorch.git#egg=pointnet2_ops&subdirectory=pointnet2_ops_lib"
 pip install utils/KNN_CUDA-0.2-py3-none-any.whl
 ```
 
-Prepare the original backbone checkpoints required by `utils/model.py`:
+Download the original backbone checkpoints required by `utils/model.py` and place them under `data_inputs/pretrained/`:
 
-```text
-data_inputs/pretrained/
-  Point-BERT.pth
-  Point-MAE.pth
-  pretrained_models_ckpt_zero-shot_classification_pointbert_ULIP-2.pt
-  Pretrianed_Uni3d_B_Ensembled.pt
-```
+| Backbone | Pretrained checkpoint |
+| :--- | :--- |
+| `Point-BERT` | [Point-BERT.pth](https://huggingface.co/SZUChangMa/PSFT/blob/main/pretrained/Point-BERT.pth) |
+| `Point-MAE` | [Point-MAE.pth](https://huggingface.co/SZUChangMa/PSFT/blob/main/pretrained/Point-MAE.pth) |
+| `ULIP-2` | [pretrained_models_ckpt_zero-shot_classification_pointbert_ULIP-2.pt](https://huggingface.co/SZUChangMa/PSFT/blob/main/pretrained/pretrained_models_ckpt_zero-shot_classification_pointbert_ULIP-2.pt) |
+| `Uni3d-B` | [Pretrianed_Uni3d_B_Ensembled.pt](https://huggingface.co/SZUChangMa/PSFT/blob/main/pretrained/Pretrianed_Uni3d_B_Ensembled.pt) |
 
 Then evaluate a PSFT checkpoint:
 
