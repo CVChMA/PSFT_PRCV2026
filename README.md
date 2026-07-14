@@ -1,5 +1,6 @@
 <div align="center">
-<h1>PSFT</h1>
+<h1>Point-Selection Fine-Tuning Framework for
+Robust Point Cloud Classification (PRCV 2026)</h1>
 
 <a href="./PSFT_main.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Paper-PDF-b31b1b" alt="Paper"></a>
 <a href="./PSFT_supp.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Supplement-PDF-orange" alt="Supplement"></a>
