@@ -167,4 +167,13 @@ The released checkpoints are distributed under the MIT license on [Hugging Face]
 
 ## Citation
 
-If you find this work useful, please cite the paper. The BibTeX entry will be updated after the paper metadata is public.
+If you find this work useful, please cite the paper:
+
+```bibtex
+
+@misc{arxiv2607.19711,
+  title        = {Point-Selection Fine-Tuning Framework for Robust Point Cloud Classification},
+  author       = {Da Li, Chang Ma, and Dongfu Yin},
+  year         = {2026},
+  url          = {https://arxiv.org/abs/2607.19711}
+}
